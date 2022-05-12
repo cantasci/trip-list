@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/trip-list/static/css/main.e6c13ad2.css",
+    "main.js": "/trip-list/static/js/main.08d3fc4f.js",
+    "static/js/787.de887ce3.chunk.js": "/trip-list/static/js/787.de887ce3.chunk.js",
+    "index.html": "/trip-list/index.html",
+    "main.e6c13ad2.css.map": "/trip-list/static/css/main.e6c13ad2.css.map",
+    "main.08d3fc4f.js.map": "/trip-list/static/js/main.08d3fc4f.js.map",
+    "787.de887ce3.chunk.js.map": "/trip-list/static/js/787.de887ce3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.08d3fc4f.js"
+  ]
+}
