@@ -1,0 +1,49 @@
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": ["stylelint-config-recommended", "stylelint-config-styled-components"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/order": ["custom-properties", "declarations"],
+    "shorthand-property-no-redundant-values": true,
+    "order/properties-order": [
+      {
+        "groupName": "positioning",
+        "emptyLineBefore": "always",
+        "noEmptyLineBetween": true,
+        "properties": ["position", "top", "left", "right", "bottom", "z-index"]
+      },
+      {
+        "groupName": "display & box model",
+        "emptyLineBefore": "always",
+        "noEmptyLineBetween": true,
+        "properties": [
+          "display",
+          "width",
+          "height",
+          "margin",
+          "padding",
+          "padding-left",
+          "padding-right",
+          "padding-top",
+          "padding-bottom",
+          "border",
+          "border-radius",
+          "box-sizing",
+          "overflow"
+        ]
+      },
+      {
+        "groupName": "color",
+        "emptyLineBefore": "always",
+        "noEmptyLineBetween": true,
+        "properties": ["background", "background-color", "color", "fill", "stroke", "stroke-width"]
+      },
+      {
+        "groupName": "text",
+        "emptyLineBefore": "always",
+        "noEmptyLineBetween": true,
+        "properties": ["font-family", "font-size", "font-style", "line-height", "text-align"]
+      }
+    ]
+  }
+}

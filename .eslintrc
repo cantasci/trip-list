@@ -1,0 +1,153 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "react-app",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/react",
+    "plugin:import/typescript",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier", "import"],
+
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      },
+      "node": {
+        "paths": ["src/"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "react/prop-types": "off",
+        "@typescript-eslint/explicit-module-boundary-types": ["error"]
+      }
+    },
+    {
+      "files": ["**/internal/*"],
+      "rules": {
+        "react/jsx-key": 0
+      }
+    }
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".ts", ".tsx"] }],
+    "react/jsx-sort-props": [
+      1,
+      {
+        "shorthandLast": true,
+        "reservedFirst": ["key"]
+      }
+    ],
+    "react/sort-prop-types": [
+      1,
+      {
+        "callbacksLast": true,
+        "requiredFirst": true,
+        "sortShapeProp": true
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      2,
+      {
+        "devDependencies": [
+          "**/testUtils.tsx",
+          "**/*.test.tsx",
+          "**/*.spec.tsx",
+          "**/test.tsx",
+          "**/test.ts",
+          ".storybook/**",
+          "**/*.stories.tsx"
+        ]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "off",
+    "no-shadow": "off",
+    "react/jsx-key": 2,
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        },
+        "groups": ["builtin", "external", "internal"],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "~/app/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "~/assets/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "~/common/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "./**",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "newlines-between": "always"
+      }
+    ], 
+    "import/no-unresolved": [2, { "caseSensitive": true }],
+    //below rule intentionally disabled, prettier handles indentation
+    "@typescript-eslint/indent": ["off"],
+    "@typescript-eslint/explicit-function-return-type": [1, { "allowExpressions": true }],
+    "@typescript-eslint/no-explicit-any": [2, { "ignoreRestArgs": true }],
+    "max-len": ["error", { "code": 100, "ignoreStrings": true, "ignoreTemplateLiterals": true }],
+    "max-params": ["error", 4]
+  }
+}

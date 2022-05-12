@@ -1,0 +1,17 @@
+**/*.js
+**/serviceWorker.ts
+**/reportWebVitals.ts
+**/react-app-env.d.ts  
+**/setupTests.ts 
+
+ 
+src/reportWebVitals.ts
+src/react-app-env.d.ts  
+src/setupTests.ts  
+src/common/utils/test.utils.tsx  
+
+
+./reportWebVitals.ts
+./react-app-env.d.ts  
+./setupTests.ts  
+./common/utils/test.utils.tsx  

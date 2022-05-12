@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "displayName": false
+      }
+    ],
+    ["module-resolver", { 
+      "alias": {
+        "~": "./src"
+      }
+    }]  
+  ]
+} 
