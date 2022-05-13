@@ -12,10 +12,14 @@ import { Trip } from '~/common/models/Trip';
  *
  * Styles
  */
-const TripListItemOuterContainer = styled.div`
+const TripListItemOuterContainer = styled.div<{ center: boolean }>`
+  display: flex;
   padding: 10px;
 
   min-height: 400px;
+
+  flex-direction: column;
+  justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
 
   border: 1px solid #d3d3d3;
 `;
@@ -116,7 +120,7 @@ const TripList: FC<Props> = ({ items, onActionSelected }) => {
   const isItemInProgress = (item: Trip): boolean => selectedTrip?.id === item.id;
 
   return (
-    <TripListItemOuterContainer>
+    <TripListItemOuterContainer center={items.length === 0}>
       {items.length > 0 ? (
         <BaseList items={items}>
           {(item, index) => (
