@@ -32,9 +32,18 @@ const DropDownList: FC<Props> = ({ items, onItemSelected }) => {
   return (
     <DropDownListContainer ref={refDropdown}>
       <DropDownListLabel onClick={toggleDropdownHandler}>Actions</DropDownListLabel>
-      <DropDownListPopupContainer ref={popupRef} shown={toggleDropdown}>
+      <DropDownListPopupContainer
+        data-testid="menu"
+        ref={popupRef}
+        role="menu"
+        shown={toggleDropdown}
+      >
         {items.map((item) => (
-          <DropDownListItem key={`action-item-${item.label}`} onClick={selectItem(item)}>
+          <DropDownListItem
+            key={`action-item-${item.label}`}
+            onClick={selectItem(item)}
+            role="menuitem"
+          >
             {item.label}
           </DropDownListItem>
         ))}
